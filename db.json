@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "Varun",
+      "lastName": "Kumar",
+      "email": "bg@g"
+    },
+    {
+      "id": 3,
+      "firstName": "varun",
+      "lastName": "Kumar",
+      "email": "varunviswanath333@gmail.com"
+    },
+    {
+      "id": 4,
+      "firstName": "varun",
+      "lastName": "Kumar",
+      "email": "varunviswanath333@yahoo.com",
+      "phoneNo": "+917092689341"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

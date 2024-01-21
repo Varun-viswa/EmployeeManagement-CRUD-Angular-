@@ -1,0 +1,11 @@
+input.ng-invalid{
+    border-left:5px solid red ;
+}
+
+.error{
+    color: red;
+}
+
+.danger{
+    color: red;
+}

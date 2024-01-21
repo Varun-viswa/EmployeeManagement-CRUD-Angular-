@@ -1,0 +1,55 @@
+body{
+    margin:100px;
+    padding:100px;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:azure;
+}
+
+h1{
+    font-family:'Festive' ,cursive;
+    font-size: 7em;
+    text-align: center;
+}
+
+p{
+    font-family: "Source Sans Pro",sans-serif;
+    font-size:1.1em ;
+    text-align: center;
+    color: rgb(182, 54, 241);
+    font-weight: 400;
+}
+
+button{
+    margin:100px;
+    padding:100px;
+    height: 100%;
+    text-align: right;
+    margin-left: 100px;
+   }
+
+.add-btn{
+    text-decoration: none;
+    color:white;
+    font-family: monospace;
+    background: black;
+    width: 150px;
+    margin-top:-50px;
+    position:relative;
+    padding: 10px;
+    border: 5px solid #fff;
+    margin-left: 44%;
+    text-align: center;
+    font-weight: bold;
+    display:inline-block;
+}
+
+.add-btn:hover{
+    background: rgb(191, 241, 98);
+    color: black;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: larger;
+     
+}
+

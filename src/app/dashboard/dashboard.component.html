@@ -1,0 +1,81 @@
+
+
+<nav class="navbar navbar-dark bg-light">
+    <div class="container-fluid">
+      <h2>Employeee Management System</h2>
+      <div class="d-flex">
+        <button (click)=" clickAddPerson()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success ">Add person</button>
+      </div>
+    </div>
+  </nav>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" >First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email ID</th>
+        <th scope="col">Phone No.</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of dashboardData">
+        <td>{{row.firstName}}</td>
+        <td>{{row.lastName}}</td>
+        <td>{{row.email}}</td>
+        <td>{{row.phoneNo}}</td>
+        <td>
+          <button (click)="editDetails(row)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info mx">Edit</button>
+          <button (click)=" deleteDetails(row)" class="btn btn-danger mx-1">Delete</button>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+
+  
+  
+  <!-- Modal -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formValue" (ngSubmit)="submitData()">
+            <div class="mb-3">
+              <label for="exampleInput1" class="form-label">First Name</label>
+              <input type="text" formControlName="firstName" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInput2" class="form-label">Last Name</label>
+              <input  type="text" formControlName="lastName" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3"  >
+              <label class="form-label">Email address</label>
+              <input type="email" formControlName="email" email *ngIf="showEmail" class="error"   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+              <span *ngIf="emailId?.invalid && emailId?.touched " >email</span>
+            </div>
+            <div class="mb-3"  >
+              <label class="form-label">Phone</label>
+              <input  formControlName="phoneNo"  class="error"   class="form-control" id="exampleInputPhone">  
+              <span  >phoneNo</span>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" *ngIf="showAdd" (click)=" postDetails()" [disabled]="formValue.invalid">Add</button>
+          <button  type="button" class="btn btn-primary" *ngIf="showUpdate" (click)="updateDetails()" [disabled]="formValue.invalid">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+  
+  
